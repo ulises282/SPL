@@ -380,13 +380,11 @@ LinkedList* ll_filter(LinkedList* this, int (*fn)(void* element))
 /******************************************************************************/
 LinkedList* ll_map(LinkedList* this,int(*pf)(void* element))
 {
-	LinkedList* nuevaLinkedList;
-	nuevaLinkedList = ll_clone(this);
 	void* elemento;
-	for(int i=0;i<ll_len(nuevaLinkedList);i++)
+	for(int i=0;i<ll_len(this);i++)
 	{
-		elemento = ll_get(nuevaLinkedList,i);
+		elemento = ll_get(this,i);
 		pf(elemento);
 	}
-	return nuevaLinkedList;
+	return this;
 }

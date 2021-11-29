@@ -160,7 +160,8 @@ int controller_saveAsText(char* path , LinkedList* pArrayList)
 LinkedList* controller_ListadoMapeado(LinkedList* pArrayList)
 {
 	LinkedList* nuevaLista;
-	nuevaLista = ll_map(pArrayList,libro_Mapeado);
+	nuevaLista = ll_clone(pArrayList);
+	nuevaLista = ll_map(nuevaLista,libro_Mapeado);
 	return nuevaLista;
 }
 /******************************************************************************/

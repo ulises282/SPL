@@ -166,8 +166,9 @@ int libro_filtrarMinotauro(void* this);
  *
  *\param void* this: lista de los libros a procesar.
  *
- *\return int:	Retorna 1 en caso de aplicar el descuento.
- * 				Retorna 0 en caso de error o la variable no tiene como editorial a planeta o Siglo XXI editores.
+ *\return int:	Retorna 0 en caso de puntero nulo.
+ *				Retorna 1 en caso contrario.
+ *
  */
 int libro_Mapeado(void* this);
 #endif /* LIBROS_H_ */

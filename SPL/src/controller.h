@@ -81,7 +81,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayList);
  *
  * \return LinkedList*:	Retorna NULL en caso de error.
  * 						Retorna Una nueva lista formada por los libros con editorial planeta y siglo XXI editores
- * 						con el descuento aplicado.
+ * 						con el descuento aplicado y los demas igual.
  */
 LinkedList* controller_ListadoMapeado(LinkedList* pArrayList);
 #endif /* CONTROLLER_H_ */

@@ -179,31 +179,37 @@ int libro_filtrarMinotauro(void* this)
 int libro_Mapeado(void* this)
 {
 	int retorno;
-	retorno = 0;
+	retorno = 1;
 	int auxIdEditorial;
 	float auxPrecio;
 	libro_getIdEditorial((eLibro*)this,&auxIdEditorial);
-	if(auxIdEditorial == 1 || auxIdEditorial == 2)
+	if(this!=NULL)
 	{
-		libro_getPrecio((eLibro*)this,&auxPrecio);
-		switch(auxIdEditorial)
+		if(auxIdEditorial == 1 || auxIdEditorial == 2)
 		{
-		case 1:
-			if(auxPrecio>=300)
+			libro_getPrecio((eLibro*)this,&auxPrecio);
+			switch(auxIdEditorial)
 			{
-				auxPrecio = auxPrecio * 0.80;
-			}
-			break;
+			case 1:
+				if(auxPrecio>=300)
+				{
+					auxPrecio = auxPrecio * 0.80;
+				}
+				break;
 
-		case 2:
-			if(auxPrecio>=200)
-			{
-				auxPrecio = auxPrecio * 0.90;
+			case 2:
+				if(auxPrecio>=200)
+				{
+					auxPrecio = auxPrecio * 0.90;
+				}
+				break;
 			}
-			break;
+			libro_setPrecio((eLibro*)this,auxPrecio);
 		}
-		libro_setPrecio((eLibro*)this,auxPrecio);
-		retorno = 1;
+	}
+	else
+	{
+		retorno = 0;
 	}
 	return retorno;
 }

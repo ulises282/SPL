@@ -39,15 +39,23 @@ int main(void) {
 			break;
 
 		case 2:
-			if(controller_loadFromText("editoriales.csv",listaEditoriales,2)==1)
+			if(estadoMenu == 1)
 			{
-				printf("Los datos se cargaron con exito\n");
-				estadoMenu = 2;
+				if(controller_loadFromText("editoriales.csv",listaEditoriales,2)==1)
+				{
+					printf("Los datos se cargaron con exito\n");
+					estadoMenu = 2;
+				}
+				else
+				{
+					printf("Error al cargar los datos\n");
+				}
 			}
 			else
 			{
-				printf("Error al cargar los datos\n");
+				printf("primero cargue los libros\n");
 			}
+
 			break;
 
 		case 3:
